@@ -14,11 +14,6 @@ logging:
       level: ERROR
       formatter: simple
       filename: logs/registration_error.log
-    broken_link_file:
-      class: logging.FileHandler
-      level: ERROR
-      formatter: simple
-      filename: logs/broken_links.log
     internal_error_file:
       class: logging.FileHandler
       level: ERROR
@@ -34,10 +29,6 @@ logging:
     registration_error:
       level: ERROR
       handlers: [registration_error_file]
-      propagate: no
-    link_checker:
-      level: DEBUG
-      handlers: [console, broken_link_file]
       propagate: no
     internal_errors:
       level: ERROR

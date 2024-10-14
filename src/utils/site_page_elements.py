@@ -6,7 +6,6 @@ class PageElements:
     FIRST_NAME = (By.ID, "form-first_name")
     LAST_NAME = (By.ID, "form-last_name")
     EMAIL = (By.ID, "form-email")
-    REGISTER_BUTTON = (By.ID, "optInForm-btn")
     COUNTRY_CONTAINER = (By.CLASS_NAME, "iti__flag-container")
     GB_OPTION = (By.ID, "iti-0__item-gb-preferred")
     PHONE_NUMBER = (By.ID, "form-phone_number")

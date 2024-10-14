@@ -7,12 +7,12 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.common.exceptions import TimeoutException, NoSuchElementException, ElementClickInterceptedException
 from .site_page_elements import PageElements
 from .site_test_data import TestData
 import subprocess
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 from selenium.webdriver.chrome.options import Options
+import time
 
 ###############################################################################
 """
@@ -120,11 +120,10 @@ def check_page_errors(driver , ignore_422 = False):
 
 def extract_language_urls(driver):
     
-        # Wait for the language menu to be present
     lang_menu_list = wait_for_element_to_be_located(driver ,PageElements.LANGUAGE_MENU)
     # Find all language option elements
     lang_raw_items = lang_menu_list.find_elements(By.TAG_NAME, "li") 
-    # create map to store language codes and their URLs
+    
     lang_map ={'en': "https://immediatfolex.ai/"} # Add default language (English) to the map
     
     for item in lang_raw_items:      
@@ -135,44 +134,39 @@ def extract_language_urls(driver):
         lang_url = lang_link_element.get_attribute("href")
         lang_map[lang_code] = lang_url
         
-
     return lang_map
 
 ###############################################################################
 
 def fill_lang_forms(driver):
-    
-   
-        first_name_form_element = wait_for_element_to_be_located(driver , PageElements.FIRST_NAME)
-        last_name_form_element = wait_for_element_to_be_located(driver , PageElements.LAST_NAME)
-        email_form_element = wait_for_element_to_be_located(driver , PageElements.EMAIL)
-
-        # Clear and fill the form fields
-        for element , data_key in [
-            (first_name_form_element , "first_name"),
-            (last_name_form_element, "last_name"),
-            (email_form_element, "email")
-        ]:    
-            element.clear()
-            element.send_keys(TestData.forms[data_key])
-            
         
-            submmit_creds_button_form_element = wait_for_element_to_be_clickable(driver , PageElements.SUBMMIT_CREDENTIAL_BUTTON)
-            submmit_creds_button_form_element.click()
-               
-        # Wait for and click the country selection container
-        country_container = wait_for_element_to_be_clickable(driver , PageElements.COUNTRY_CONTAINER)
-        country_container.click()
+    time.sleep(5)
+    first_name_form_element = wait_for_element_to_be_located(driver , PageElements.FIRST_NAME)
+    last_name_form_element = wait_for_element_to_be_located(driver , PageElements.LAST_NAME)
+    email_form_element = wait_for_element_to_be_located(driver , PageElements.EMAIL)
 
-        # Wait for and click the Great Britain option
-        gb_option = wait_for_element_to_be_clickable(driver, PageElements.GB_OPTION)    
-        gb_option.click()
+    time.sleep(5)
+    # Clear and fill the form fields
+    for element , data_key in [
+        (first_name_form_element , "first_name"),
+        (last_name_form_element, "last_name"),
+        (email_form_element, "email")
+    ]:    
+        element.clear()
+        element.send_keys(TestData.forms[data_key])
         
-        phone_number_form_element = wait_for_element_to_be_clickable(driver , PageElements.PHONE_NUMBER)
-        phone_number_form_element.clear()
-        phone_number_form_element.send_keys(TestData.forms["phone_number"])
+    wait_for_element_and_click(driver , PageElements.SUBMMIT_CREDENTIAL_BUTTON)
           
-        
+    # Wait for and click the country selection container
+    wait_for_element_and_click(driver , PageElements.COUNTRY_CONTAINER)
+
+    # Wait for and click the Great Britain option
+    wait_for_element_and_click(driver, PageElements.GB_OPTION)    
+    
+    phone_number_form_element = wait_for_element_to_be_located(driver , PageElements.PHONE_NUMBER)
+    phone_number_form_element.clear()
+    phone_number_form_element.send_keys(TestData.forms["phone_number"])
+          
 ###############################################################################
 
 def redirect_page(driver, redirect_button):
@@ -183,18 +177,20 @@ def redirect_page(driver, redirect_button):
 
 ###############################################################################
 def get_redirect_button(driver , timeout = 10):
-    return wait_for_element_to_be_clickable(driver, PageElements.REDIRECT_BUTTON)
+    return WebDriverWait(driver,timeout).until(
+        EC.element_to_be_clickable( PageElements.REDIRECT_BUTTON))
     
 ###############################################################################
 
-def wait_for_element_to_be_clickable(driver , element, timeout = 10):
-    return WebDriverWait(driver, timeout ).until(
+def wait_for_element_and_click(driver , element, timeout = 15):
+    clickable_element = WebDriverWait(driver, timeout ).until(
         EC.element_to_be_clickable(element)
     )
+    clickable_element.click()
 
 ###############################################################################
     
-def wait_for_element_to_be_located(driver , element, timeout = 10):
+def wait_for_element_to_be_located(driver , element, timeout = 150):
         return WebDriverWait(driver, timeout ).until(
         EC.presence_of_element_located(element)
     )
