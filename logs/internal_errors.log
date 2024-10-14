@@ -1,0 +1,499 @@
+2024-10-14 14:56:03,837 - internal_errors - ERROR - generic exception was thrown athttps://immediatfolex.ai/bg/
+ exception: Message: stale element reference: stale element not found
+  (Session info: chrome=129.0.6668.89); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Stacktrace:
+#0 0x57011d95bb9a <unknown>
+#1 0x57011d641670 <unknown>
+#2 0x57011d6518a2 <unknown>
+#3 0x57011d647d3c <unknown>
+#4 0x57011d646059 <unknown>
+#5 0x57011d649165 <unknown>
+#6 0x57011d6491ec <unknown>
+#7 0x57011d69294a <unknown>
+#8 0x57011d6872e2 <unknown>
+#9 0x57011d6b5b82 <unknown>
+#10 0x57011d6854c8 <unknown>
+#11 0x57011d6b5d4e <unknown>
+#12 0x57011d6d4dd6 <unknown>
+#13 0x57011d6b5923 <unknown>
+#14 0x57011d6836e7 <unknown>
+#15 0x57011d6846de <unknown>
+#16 0x57011d92566b <unknown>
+#17 0x57011d929611 <unknown>
+#18 0x57011d9114e5 <unknown>
+#19 0x57011d92a192 <unknown>
+#20 0x57011d8f66ef <unknown>
+#21 0x57011d94a9d8 <unknown>
+#22 0x57011d94aba7 <unknown>
+#23 0x57011d95a9ec <unknown>
+#24 0x7dd200494ac3 <unknown>
+
+2024-10-14 14:56:03,841 - internal_errors - ERROR - An error occurred: Message: stale element reference: stale element not found
+  (Session info: chrome=129.0.6668.89); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Stacktrace:
+#0 0x57011d95bb9a <unknown>
+#1 0x57011d641670 <unknown>
+#2 0x57011d6518a2 <unknown>
+#3 0x57011d647d3c <unknown>
+#4 0x57011d646059 <unknown>
+#5 0x57011d649165 <unknown>
+#6 0x57011d6491ec <unknown>
+#7 0x57011d69294a <unknown>
+#8 0x57011d6872e2 <unknown>
+#9 0x57011d6b5b82 <unknown>
+#10 0x57011d6854c8 <unknown>
+#11 0x57011d6b5d4e <unknown>
+#12 0x57011d6d4dd6 <unknown>
+#13 0x57011d6b5923 <unknown>
+#14 0x57011d6836e7 <unknown>
+#15 0x57011d6846de <unknown>
+#16 0x57011d92566b <unknown>
+#17 0x57011d929611 <unknown>
+#18 0x57011d9114e5 <unknown>
+#19 0x57011d92a192 <unknown>
+#20 0x57011d8f66ef <unknown>
+#21 0x57011d94a9d8 <unknown>
+#22 0x57011d94aba7 <unknown>
+#23 0x57011d95a9ec <unknown>
+#24 0x7dd200494ac3 <unknown>
+
+
+Traceback:
+Traceback (most recent call last):
+  File "/home/ishai/Documents/WebLinkChecker/main.py", line 30, in site_reg_check
+    fill_lang_forms(driver)
+  File "/home/ishai/Documents/WebLinkChecker/src/utils/site_selenium_utils.py", line 156, in fill_lang_forms
+    element.clear()
+  File "/home/ishai/.local/lib/python3.10/site-packages/selenium/webdriver/remote/webelement.py", line 117, in clear
+    self._execute(Command.CLEAR_ELEMENT)
+  File "/home/ishai/.local/lib/python3.10/site-packages/selenium/webdriver/remote/webelement.py", line 395, in _execute
+    return self._parent.execute(command, params)
+  File "/home/ishai/.local/lib/python3.10/site-packages/selenium/webdriver/remote/webdriver.py", line 354, in execute
+    self.error_handler.check_response(response)
+  File "/home/ishai/.local/lib/python3.10/site-packages/selenium/webdriver/remote/errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.StaleElementReferenceException: Message: stale element reference: stale element not found
+  (Session info: chrome=129.0.6668.89); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Stacktrace:
+#0 0x57011d95bb9a <unknown>
+#1 0x57011d641670 <unknown>
+#2 0x57011d6518a2 <unknown>
+#3 0x57011d647d3c <unknown>
+#4 0x57011d646059 <unknown>
+#5 0x57011d649165 <unknown>
+#6 0x57011d6491ec <unknown>
+#7 0x57011d69294a <unknown>
+#8 0x57011d6872e2 <unknown>
+#9 0x57011d6b5b82 <unknown>
+#10 0x57011d6854c8 <unknown>
+#11 0x57011d6b5d4e <unknown>
+#12 0x57011d6d4dd6 <unknown>
+#13 0x57011d6b5923 <unknown>
+#14 0x57011d6836e7 <unknown>
+#15 0x57011d6846de <unknown>
+#16 0x57011d92566b <unknown>
+#17 0x57011d929611 <unknown>
+#18 0x57011d9114e5 <unknown>
+#19 0x57011d92a192 <unknown>
+#20 0x57011d8f66ef <unknown>
+#21 0x57011d94a9d8 <unknown>
+#22 0x57011d94aba7 <unknown>
+#23 0x57011d95a9ec <unknown>
+#24 0x7dd200494ac3 <unknown>
+
+
+2024-10-14 15:12:00,000 - internal_errors - ERROR - generic exception was thrown athttps://immediatfolex.ai/
+ exception: Message: 
+Stacktrace:
+#0 0x5ecee6247b9a <unknown>
+#1 0x5ecee5f2d670 <unknown>
+#2 0x5ecee5f7cc48 <unknown>
+#3 0x5ecee5f7cee1 <unknown>
+#4 0x5ecee5fc3924 <unknown>
+#5 0x5ecee5fa1bad <unknown>
+#6 0x5ecee5fc0dd6 <unknown>
+#7 0x5ecee5fa1923 <unknown>
+#8 0x5ecee5f6f6e7 <unknown>
+#9 0x5ecee5f706de <unknown>
+#10 0x5ecee621166b <unknown>
+#11 0x5ecee6215611 <unknown>
+#12 0x5ecee61fd4e5 <unknown>
+#13 0x5ecee6216192 <unknown>
+#14 0x5ecee61e26ef <unknown>
+#15 0x5ecee62369d8 <unknown>
+#16 0x5ecee6236ba7 <unknown>
+#17 0x5ecee62469ec <unknown>
+#18 0x762095294ac3 <unknown>
+
+2024-10-14 15:12:00,001 - internal_errors - ERROR - An error occurred: Message: 
+Stacktrace:
+#0 0x5ecee6247b9a <unknown>
+#1 0x5ecee5f2d670 <unknown>
+#2 0x5ecee5f7cc48 <unknown>
+#3 0x5ecee5f7cee1 <unknown>
+#4 0x5ecee5fc3924 <unknown>
+#5 0x5ecee5fa1bad <unknown>
+#6 0x5ecee5fc0dd6 <unknown>
+#7 0x5ecee5fa1923 <unknown>
+#8 0x5ecee5f6f6e7 <unknown>
+#9 0x5ecee5f706de <unknown>
+#10 0x5ecee621166b <unknown>
+#11 0x5ecee6215611 <unknown>
+#12 0x5ecee61fd4e5 <unknown>
+#13 0x5ecee6216192 <unknown>
+#14 0x5ecee61e26ef <unknown>
+#15 0x5ecee62369d8 <unknown>
+#16 0x5ecee6236ba7 <unknown>
+#17 0x5ecee62469ec <unknown>
+#18 0x762095294ac3 <unknown>
+
+
+Traceback:
+Traceback (most recent call last):
+  File "/home/ishai/Documents/WebLinkChecker/main.py", line 30, in site_reg_check
+    fill_lang_forms(driver)
+  File "/home/ishai/Documents/WebLinkChecker/src/utils/site_selenium_utils.py", line 165, in fill_lang_forms
+    country_container = wait_for_element_to_be_clickable(driver , PageElements.COUNTRY_CONTAINER)
+  File "/home/ishai/Documents/WebLinkChecker/src/utils/site_selenium_utils.py", line 192, in wait_for_element_to_be_clickable
+    return WebDriverWait(driver, timeout ).until(
+  File "/home/ishai/.local/lib/python3.10/site-packages/selenium/webdriver/support/wait.py", line 105, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+#0 0x5ecee6247b9a <unknown>
+#1 0x5ecee5f2d670 <unknown>
+#2 0x5ecee5f7cc48 <unknown>
+#3 0x5ecee5f7cee1 <unknown>
+#4 0x5ecee5fc3924 <unknown>
+#5 0x5ecee5fa1bad <unknown>
+#6 0x5ecee5fc0dd6 <unknown>
+#7 0x5ecee5fa1923 <unknown>
+#8 0x5ecee5f6f6e7 <unknown>
+#9 0x5ecee5f706de <unknown>
+#10 0x5ecee621166b <unknown>
+#11 0x5ecee6215611 <unknown>
+#12 0x5ecee61fd4e5 <unknown>
+#13 0x5ecee6216192 <unknown>
+#14 0x5ecee61e26ef <unknown>
+#15 0x5ecee62369d8 <unknown>
+#16 0x5ecee6236ba7 <unknown>
+#17 0x5ecee62469ec <unknown>
+#18 0x762095294ac3 <unknown>
+
+
+2024-10-14 15:13:15,842 - internal_errors - ERROR - generic exception was thrown athttps://immediatfolex.ai/
+ exception: Message: 
+Stacktrace:
+#0 0x5997e2d65b9a <unknown>
+#1 0x5997e2a4b670 <unknown>
+#2 0x5997e2a9ac48 <unknown>
+#3 0x5997e2a9aee1 <unknown>
+#4 0x5997e2ae1924 <unknown>
+#5 0x5997e2abfbad <unknown>
+#6 0x5997e2adedd6 <unknown>
+#7 0x5997e2abf923 <unknown>
+#8 0x5997e2a8d6e7 <unknown>
+#9 0x5997e2a8e6de <unknown>
+#10 0x5997e2d2f66b <unknown>
+#11 0x5997e2d33611 <unknown>
+#12 0x5997e2d1b4e5 <unknown>
+#13 0x5997e2d34192 <unknown>
+#14 0x5997e2d006ef <unknown>
+#15 0x5997e2d549d8 <unknown>
+#16 0x5997e2d54ba7 <unknown>
+#17 0x5997e2d649ec <unknown>
+#18 0x73d431e94ac3 <unknown>
+
+2024-10-14 15:13:15,843 - internal_errors - ERROR - An error occurred: Message: 
+Stacktrace:
+#0 0x5997e2d65b9a <unknown>
+#1 0x5997e2a4b670 <unknown>
+#2 0x5997e2a9ac48 <unknown>
+#3 0x5997e2a9aee1 <unknown>
+#4 0x5997e2ae1924 <unknown>
+#5 0x5997e2abfbad <unknown>
+#6 0x5997e2adedd6 <unknown>
+#7 0x5997e2abf923 <unknown>
+#8 0x5997e2a8d6e7 <unknown>
+#9 0x5997e2a8e6de <unknown>
+#10 0x5997e2d2f66b <unknown>
+#11 0x5997e2d33611 <unknown>
+#12 0x5997e2d1b4e5 <unknown>
+#13 0x5997e2d34192 <unknown>
+#14 0x5997e2d006ef <unknown>
+#15 0x5997e2d549d8 <unknown>
+#16 0x5997e2d54ba7 <unknown>
+#17 0x5997e2d649ec <unknown>
+#18 0x73d431e94ac3 <unknown>
+
+
+Traceback:
+Traceback (most recent call last):
+  File "/home/ishai/Documents/WebLinkChecker/main.py", line 30, in site_reg_check
+    fill_lang_forms(driver)
+  File "/home/ishai/Documents/WebLinkChecker/src/utils/site_selenium_utils.py", line 165, in fill_lang_forms
+    country_container = wait_for_element_to_be_clickable(driver , PageElements.COUNTRY_CONTAINER)
+  File "/home/ishai/Documents/WebLinkChecker/src/utils/site_selenium_utils.py", line 192, in wait_for_element_to_be_clickable
+    return WebDriverWait(driver, timeout ).until(
+  File "/home/ishai/.local/lib/python3.10/site-packages/selenium/webdriver/support/wait.py", line 105, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+#0 0x5997e2d65b9a <unknown>
+#1 0x5997e2a4b670 <unknown>
+#2 0x5997e2a9ac48 <unknown>
+#3 0x5997e2a9aee1 <unknown>
+#4 0x5997e2ae1924 <unknown>
+#5 0x5997e2abfbad <unknown>
+#6 0x5997e2adedd6 <unknown>
+#7 0x5997e2abf923 <unknown>
+#8 0x5997e2a8d6e7 <unknown>
+#9 0x5997e2a8e6de <unknown>
+#10 0x5997e2d2f66b <unknown>
+#11 0x5997e2d33611 <unknown>
+#12 0x5997e2d1b4e5 <unknown>
+#13 0x5997e2d34192 <unknown>
+#14 0x5997e2d006ef <unknown>
+#15 0x5997e2d549d8 <unknown>
+#16 0x5997e2d54ba7 <unknown>
+#17 0x5997e2d649ec <unknown>
+#18 0x73d431e94ac3 <unknown>
+
+
+2024-10-14 15:16:43,972 - internal_errors - ERROR - generic exception was thrown athttps://immediatfolex.ai/
+ exception: Message: 
+Stacktrace:
+#0 0x5aa69e9dab9a <unknown>
+#1 0x5aa69e6c0670 <unknown>
+#2 0x5aa69e70fc48 <unknown>
+#3 0x5aa69e70fee1 <unknown>
+#4 0x5aa69e756924 <unknown>
+#5 0x5aa69e734bad <unknown>
+#6 0x5aa69e753dd6 <unknown>
+#7 0x5aa69e734923 <unknown>
+#8 0x5aa69e7026e7 <unknown>
+#9 0x5aa69e7036de <unknown>
+#10 0x5aa69e9a466b <unknown>
+#11 0x5aa69e9a8611 <unknown>
+#12 0x5aa69e9904e5 <unknown>
+#13 0x5aa69e9a9192 <unknown>
+#14 0x5aa69e9756ef <unknown>
+#15 0x5aa69e9c99d8 <unknown>
+#16 0x5aa69e9c9ba7 <unknown>
+#17 0x5aa69e9d99ec <unknown>
+#18 0x7f11c6694ac3 <unknown>
+
+2024-10-14 15:16:43,973 - internal_errors - ERROR - An error occurred: Message: 
+Stacktrace:
+#0 0x5aa69e9dab9a <unknown>
+#1 0x5aa69e6c0670 <unknown>
+#2 0x5aa69e70fc48 <unknown>
+#3 0x5aa69e70fee1 <unknown>
+#4 0x5aa69e756924 <unknown>
+#5 0x5aa69e734bad <unknown>
+#6 0x5aa69e753dd6 <unknown>
+#7 0x5aa69e734923 <unknown>
+#8 0x5aa69e7026e7 <unknown>
+#9 0x5aa69e7036de <unknown>
+#10 0x5aa69e9a466b <unknown>
+#11 0x5aa69e9a8611 <unknown>
+#12 0x5aa69e9904e5 <unknown>
+#13 0x5aa69e9a9192 <unknown>
+#14 0x5aa69e9756ef <unknown>
+#15 0x5aa69e9c99d8 <unknown>
+#16 0x5aa69e9c9ba7 <unknown>
+#17 0x5aa69e9d99ec <unknown>
+#18 0x7f11c6694ac3 <unknown>
+
+
+Traceback:
+Traceback (most recent call last):
+  File "/home/ishai/Documents/WebLinkChecker/main.py", line 30, in site_reg_check
+    fill_lang_forms(driver)
+  File "/home/ishai/Documents/WebLinkChecker/src/utils/site_selenium_utils.py", line 163, in fill_lang_forms
+    country_container = wait_for_element_to_be_clickable(driver , PageElements.COUNTRY_CONTAINER)
+  File "/home/ishai/Documents/WebLinkChecker/src/utils/site_selenium_utils.py", line 190, in wait_for_element_to_be_clickable
+    return WebDriverWait(driver, timeout ).until(
+  File "/home/ishai/.local/lib/python3.10/site-packages/selenium/webdriver/support/wait.py", line 105, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+#0 0x5aa69e9dab9a <unknown>
+#1 0x5aa69e6c0670 <unknown>
+#2 0x5aa69e70fc48 <unknown>
+#3 0x5aa69e70fee1 <unknown>
+#4 0x5aa69e756924 <unknown>
+#5 0x5aa69e734bad <unknown>
+#6 0x5aa69e753dd6 <unknown>
+#7 0x5aa69e734923 <unknown>
+#8 0x5aa69e7026e7 <unknown>
+#9 0x5aa69e7036de <unknown>
+#10 0x5aa69e9a466b <unknown>
+#11 0x5aa69e9a8611 <unknown>
+#12 0x5aa69e9904e5 <unknown>
+#13 0x5aa69e9a9192 <unknown>
+#14 0x5aa69e9756ef <unknown>
+#15 0x5aa69e9c99d8 <unknown>
+#16 0x5aa69e9c9ba7 <unknown>
+#17 0x5aa69e9d99ec <unknown>
+#18 0x7f11c6694ac3 <unknown>
+
+
+2024-10-14 15:18:13,026 - internal_errors - ERROR - generic exception was thrown athttps://immediatfolex.ai/
+ exception: Message: 
+Stacktrace:
+#0 0x55c9326bfb9a <unknown>
+#1 0x55c9323a5670 <unknown>
+#2 0x55c9323f4c48 <unknown>
+#3 0x55c9323f4ee1 <unknown>
+#4 0x55c93243b924 <unknown>
+#5 0x55c932419bad <unknown>
+#6 0x55c932438dd6 <unknown>
+#7 0x55c932419923 <unknown>
+#8 0x55c9323e76e7 <unknown>
+#9 0x55c9323e86de <unknown>
+#10 0x55c93268966b <unknown>
+#11 0x55c93268d611 <unknown>
+#12 0x55c9326754e5 <unknown>
+#13 0x55c93268e192 <unknown>
+#14 0x55c93265a6ef <unknown>
+#15 0x55c9326ae9d8 <unknown>
+#16 0x55c9326aeba7 <unknown>
+#17 0x55c9326be9ec <unknown>
+#18 0x7e108ba94ac3 <unknown>
+
+2024-10-14 15:18:13,028 - internal_errors - ERROR - An error occurred: Message: 
+Stacktrace:
+#0 0x55c9326bfb9a <unknown>
+#1 0x55c9323a5670 <unknown>
+#2 0x55c9323f4c48 <unknown>
+#3 0x55c9323f4ee1 <unknown>
+#4 0x55c93243b924 <unknown>
+#5 0x55c932419bad <unknown>
+#6 0x55c932438dd6 <unknown>
+#7 0x55c932419923 <unknown>
+#8 0x55c9323e76e7 <unknown>
+#9 0x55c9323e86de <unknown>
+#10 0x55c93268966b <unknown>
+#11 0x55c93268d611 <unknown>
+#12 0x55c9326754e5 <unknown>
+#13 0x55c93268e192 <unknown>
+#14 0x55c93265a6ef <unknown>
+#15 0x55c9326ae9d8 <unknown>
+#16 0x55c9326aeba7 <unknown>
+#17 0x55c9326be9ec <unknown>
+#18 0x7e108ba94ac3 <unknown>
+
+
+Traceback:
+Traceback (most recent call last):
+  File "/home/ishai/Documents/WebLinkChecker/main.py", line 30, in site_reg_check
+    fill_lang_forms(driver)
+  File "/home/ishai/Documents/WebLinkChecker/src/utils/site_selenium_utils.py", line 170, in fill_lang_forms
+    country_container = wait_for_element_to_be_clickable(driver , PageElements.COUNTRY_CONTAINER)
+  File "/home/ishai/Documents/WebLinkChecker/src/utils/site_selenium_utils.py", line 197, in wait_for_element_to_be_clickable
+    return WebDriverWait(driver, timeout ).until(
+  File "/home/ishai/.local/lib/python3.10/site-packages/selenium/webdriver/support/wait.py", line 105, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+#0 0x55c9326bfb9a <unknown>
+#1 0x55c9323a5670 <unknown>
+#2 0x55c9323f4c48 <unknown>
+#3 0x55c9323f4ee1 <unknown>
+#4 0x55c93243b924 <unknown>
+#5 0x55c932419bad <unknown>
+#6 0x55c932438dd6 <unknown>
+#7 0x55c932419923 <unknown>
+#8 0x55c9323e76e7 <unknown>
+#9 0x55c9323e86de <unknown>
+#10 0x55c93268966b <unknown>
+#11 0x55c93268d611 <unknown>
+#12 0x55c9326754e5 <unknown>
+#13 0x55c93268e192 <unknown>
+#14 0x55c93265a6ef <unknown>
+#15 0x55c9326ae9d8 <unknown>
+#16 0x55c9326aeba7 <unknown>
+#17 0x55c9326be9ec <unknown>
+#18 0x7e108ba94ac3 <unknown>
+
+
+2024-10-14 15:19:48,223 - internal_errors - ERROR - generic exception was thrown athttps://immediatfolex.ai/
+ exception: Message: 
+Stacktrace:
+#0 0x6346d98dab9a <unknown>
+#1 0x6346d95c0670 <unknown>
+#2 0x6346d960fc48 <unknown>
+#3 0x6346d960fee1 <unknown>
+#4 0x6346d9656924 <unknown>
+#5 0x6346d9634bad <unknown>
+#6 0x6346d9653dd6 <unknown>
+#7 0x6346d9634923 <unknown>
+#8 0x6346d96026e7 <unknown>
+#9 0x6346d96036de <unknown>
+#10 0x6346d98a466b <unknown>
+#11 0x6346d98a8611 <unknown>
+#12 0x6346d98904e5 <unknown>
+#13 0x6346d98a9192 <unknown>
+#14 0x6346d98756ef <unknown>
+#15 0x6346d98c99d8 <unknown>
+#16 0x6346d98c9ba7 <unknown>
+#17 0x6346d98d99ec <unknown>
+#18 0x770bc3094ac3 <unknown>
+
+2024-10-14 15:19:48,224 - internal_errors - ERROR - An error occurred: Message: 
+Stacktrace:
+#0 0x6346d98dab9a <unknown>
+#1 0x6346d95c0670 <unknown>
+#2 0x6346d960fc48 <unknown>
+#3 0x6346d960fee1 <unknown>
+#4 0x6346d9656924 <unknown>
+#5 0x6346d9634bad <unknown>
+#6 0x6346d9653dd6 <unknown>
+#7 0x6346d9634923 <unknown>
+#8 0x6346d96026e7 <unknown>
+#9 0x6346d96036de <unknown>
+#10 0x6346d98a466b <unknown>
+#11 0x6346d98a8611 <unknown>
+#12 0x6346d98904e5 <unknown>
+#13 0x6346d98a9192 <unknown>
+#14 0x6346d98756ef <unknown>
+#15 0x6346d98c99d8 <unknown>
+#16 0x6346d98c9ba7 <unknown>
+#17 0x6346d98d99ec <unknown>
+#18 0x770bc3094ac3 <unknown>
+
+
+Traceback:
+Traceback (most recent call last):
+  File "/home/ishai/Documents/WebLinkChecker/main.py", line 30, in site_reg_check
+    fill_lang_forms(driver)
+  File "/home/ishai/Documents/WebLinkChecker/src/utils/site_selenium_utils.py", line 170, in fill_lang_forms
+    country_container = wait_for_element_to_be_clickable(driver , PageElements.COUNTRY_CONTAINER)
+  File "/home/ishai/Documents/WebLinkChecker/src/utils/site_selenium_utils.py", line 197, in wait_for_element_to_be_clickable
+    return WebDriverWait(driver, timeout ).until(
+  File "/home/ishai/.local/lib/python3.10/site-packages/selenium/webdriver/support/wait.py", line 105, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+#0 0x6346d98dab9a <unknown>
+#1 0x6346d95c0670 <unknown>
+#2 0x6346d960fc48 <unknown>
+#3 0x6346d960fee1 <unknown>
+#4 0x6346d9656924 <unknown>
+#5 0x6346d9634bad <unknown>
+#6 0x6346d9653dd6 <unknown>
+#7 0x6346d9634923 <unknown>
+#8 0x6346d96026e7 <unknown>
+#9 0x6346d96036de <unknown>
+#10 0x6346d98a466b <unknown>
+#11 0x6346d98a8611 <unknown>
+#12 0x6346d98904e5 <unknown>
+#13 0x6346d98a9192 <unknown>
+#14 0x6346d98756ef <unknown>
+#15 0x6346d98c99d8 <unknown>
+#16 0x6346d98c9ba7 <unknown>
+#17 0x6346d98d99ec <unknown>
+#18 0x770bc3094ac3 <unknown>
+
+

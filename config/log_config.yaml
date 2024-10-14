@@ -1,0 +1,49 @@
+logging:
+  version: 1
+  formatters:
+    simple:
+      format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  handlers:
+    console:
+      class: logging.StreamHandler
+      level: DEBUG
+      formatter: simple
+      stream: ext://sys.stdout
+    registration_error_file:
+      class: logging.FileHandler
+      level: ERROR
+      formatter: simple
+      filename: logs/registration_error.log
+    broken_link_file:
+      class: logging.FileHandler
+      level: ERROR
+      formatter: simple
+      filename: logs/broken_links.log
+    internal_error_file:
+      class: logging.FileHandler
+      level: ERROR
+      formatter: simple
+      filename: logs/internal_errors.log
+    page_error_file:
+      class: logging.FileHandler
+      level: ERROR
+      formatter: simple
+      filename: logs/page_errors.log
+
+  loggers:
+    registration_error:
+      level: ERROR
+      handlers: [registration_error_file]
+      propagate: no
+    link_checker:
+      level: DEBUG
+      handlers: [console, broken_link_file]
+      propagate: no
+    internal_errors:
+      level: ERROR
+      handlers: [internal_error_file]
+      propagate: no
+    page_errors:
+      level: ERROR
+      handlers: [page_error_file]
+      propagate: no
