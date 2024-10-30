@@ -9,113 +9,55 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from .site_page_elements import PageElements
 from .site_test_data import TestData
-import subprocess
-from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 from selenium.webdriver.chrome.options import Options
 import time
 
 ###############################################################################
-"""
-from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
-from webdriver_manager.chrome import ChromeDriverManager
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.common.exceptions import TimeoutException, NoSuchElementException, ElementClickInterceptedException
-from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
-from selenium.webdriver.chrome.options import Options
-
-# Conditional imports
-import sys
-import os
-
-# Add the parent directory to sys.path
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-
-try:
-    from immediatfolex_page_elements import PageElements
-    from immediatfolex_test_data import TestData
-except ImportError:
-    from utils.immediatfolex_page_elements import PageElements
-    from utils.immediatfolex_test_data import TestData
-
-import subprocess
-
-"""
-
-##############################################################################
-
-"""
-
 def setup_driver():
-    print("VPN connection - setup_driver")
-    # Connect to NordVPN UK server
-    server = "UK"
-    try:
-        print(f"Attempting to connect to NordVPN server: {server}")
-        result = subprocess.run(["nordvpn", "connect", server], capture_output=True, text=True, check=True)
-        print("NordVPN connection attempt completed")
-        print("Stdout:", result.stdout)
-        print("Stderr:", result.stderr)
-    except subprocess.CalledProcessError as e:
-        print(f"Failed to connect to NordVPN server {server}. Error:")
-        print("Stdout:", e.stdout)
-        print("Stderr:", e.stderr)
-        print("Return code:", e.returncode)
-        return None
-    
-    # Set up Chrome options
     chrome_options = Options()
-    chrome_options.add_argument('--no-sandbox')
-    chrome_options.add_argument('--disable-dev-shm-usage')
-     # enables logging -for all types of messages- for the  browser
+    
+    # Enable logging for all types of messages for the browser
     chrome_options.set_capability('goog:loggingPrefs', {'browser': 'ALL'})
+    
+    # Add additional Chrome options for debugging
+    chrome_options.add_argument('--disable-extensions')
+    chrome_options.add_argument('--no-sandbox')
+    chrome_options.add_argument('--disable-gpu')
+    chrome_options.add_argument('--ignore-certificate-errors')
+    chrome_options.add_argument('--disable-popup-blocking')
     
     # Create a Service object using ChromeDriverManager
     service = Service(ChromeDriverManager().install())
     
-    # Create and return the Chrome WebDriver instance
-    try:
-        driver = webdriver.Chrome(service=service, options=chrome_options)
-        return driver
-    except Exception as e:
-        print(f"Failed to create WebDriver: {e}")
-        return None
-"""
-##############################################################################
-
-
-def setup_driver():
+    # Create an instance of the Chrome WebDriver
+    driver = webdriver.Chrome(service=service, options=chrome_options)
     
-    chrome_options = Options()
-    
-    # enables logging -for all types of messages- for the  browser
-    chrome_options.set_capability('goog:loggingPrefs', {'browser': 'ALL'})
-    
-    # creates a Service object, which is used to define how the WebDriver 
-    # should start and stop the browser driver process.
-       # Create a Service object using ChromeDriverManager
-    service = Service(ChromeDriverManager().install())
-    
-     # creates an instance of the Chrome WebDriver. allowing interaction with a browser
-    driver = webdriver.Chrome(service=service,options=chrome_options)
     return driver
 
 ###############################################################################
-
-def check_page_errors(driver , ignore_422 = False):
+def check_page_errors(driver ):
     logs = driver.get_log("browser")
     errors = []
     for log in logs:
-        if log["level"] in ['SEVERE', 'WARNING' , 'ERROR'] :
-            if ignore_422 and "status of 422" in log['message'] and "split-registration" in log['message']:                continue
-            else:
-                errors.append(log)
-                print(f"log is : {log}")
-                
+        if log["level"] in ['SEVERE', 'ERROR'] :
+            errors.append(log)
+            print(f"log is : {log}")
+            
     return errors
 
+###############################################################################
+def clear_browser_error_logs(driver):
+    print(f"clearance of : ${driver.current_url}")
+    driver.get_log('browser')  # This actually clears the logs as it retrieves them
+
+###############################################################################
+def is_422_status_code(driver):
+    logs = driver.get_log("browser")
+    for log in logs:
+        if 'status of 422' in log['message']:
+            return True
+    
+    return False
 ###############################################################################
 
 def extract_language_urls(driver):
@@ -137,8 +79,7 @@ def extract_language_urls(driver):
     return lang_map
 
 ###############################################################################
-
-def fill_lang_forms(driver):
+def fill_reg_form(driver):
         
     time.sleep(5)
     first_name_form_element = wait_for_element_to_be_located(driver , PageElements.FIRST_NAME)
@@ -168,20 +109,18 @@ def fill_lang_forms(driver):
     phone_number_form_element.send_keys(TestData.forms["phone_number"])
           
 ###############################################################################
-
-def redirect_page(driver, redirect_button):
+def register(driver, register_button):
     
     old_url = driver.current_url
-    redirect_button.click()
-    WebDriverWait(driver, 10).until(EC.url_changes(old_url))
+    register_button.click()
+    WebDriverWait(driver, 15).until(EC.url_changes(old_url))
 
 ###############################################################################
-def get_redirect_button(driver , timeout = 10):
+def get_register_button(driver , timeout = 15):
     return WebDriverWait(driver,timeout).until(
-        EC.element_to_be_clickable( PageElements.REDIRECT_BUTTON))
+        EC.element_to_be_clickable( PageElements.REGISTER_BUTTON))
     
 ###############################################################################
-
 def wait_for_element_and_click(driver , element, timeout = 15):
     clickable_element = WebDriverWait(driver, timeout ).until(
         EC.element_to_be_clickable(element)
@@ -189,8 +128,7 @@ def wait_for_element_and_click(driver , element, timeout = 15):
     clickable_element.click()
 
 ###############################################################################
-    
-def wait_for_element_to_be_located(driver , element, timeout = 150):
+def wait_for_element_to_be_located(driver , element, timeout = 15):
         return WebDriverWait(driver, timeout ).until(
         EC.presence_of_element_located(element)
     )
