@@ -1,8 +1,6 @@
-
-
-from selenium import webdriver # webdriver module providing classes to interact with various web browsers.
-from selenium.webdriver.chrome.service import Service # imports the Service class for Chrome WebDriver
-from webdriver_manager.chrome import ChromeDriverManager # imports the ChromeDriverManager
+from selenium import webdriver 
+from selenium.webdriver.chrome.service import Service 
+from webdriver_manager.chrome import ChromeDriverManager 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
@@ -41,14 +39,12 @@ def check_page_errors(driver ):
     for log in logs:
         if log["level"] in ['SEVERE', 'ERROR'] :
             errors.append(log)
-            print(f"log is : {log}")
             
     return errors
 
 ###############################################################################
 def clear_browser_error_logs(driver):
-    print(f"clearance of : ${driver.current_url}")
-    driver.get_log('browser')  # This actually clears the logs as it retrieves them
+    driver.get_log('browser')  
 
 ###############################################################################
 def is_422_status_code(driver):
@@ -97,11 +93,7 @@ def fill_reg_form(driver):
         element.send_keys(TestData.forms[data_key])
         
     wait_for_element_and_click(driver , PageElements.SUBMMIT_CREDENTIAL_BUTTON)
-          
-    # Wait for and click the country selection container
     wait_for_element_and_click(driver , PageElements.COUNTRY_CONTAINER)
-
-    # Wait for and click the Great Britain option
     wait_for_element_and_click(driver, PageElements.GB_OPTION)    
     
     phone_number_form_element = wait_for_element_to_be_located(driver , PageElements.PHONE_NUMBER)
@@ -134,20 +126,3 @@ def wait_for_element_to_be_located(driver , element, timeout = 15):
     )
     
 ###############################################################################
-       
-def main():
-    driver = setup_driver()
-    url = "https://jsbin.com/badscript"
-    driver.get(url)
-    errors = check_page_errors(driver)
-    if errors:
-        print("Errors found:")
-        for error in errors:
-            print(error)
-    else:
-        print("No errors found.")
-    driver.quit()
-
-if __name__ == "__main__":
-    main()
-   

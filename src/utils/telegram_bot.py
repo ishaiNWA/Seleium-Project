@@ -32,12 +32,7 @@ def send_telegram_alarm(message):
     payload['text'] = message
     
         # Sending the request
-    response = requests.post(URL, data=payload)
+    requests.post(URL, data=payload)
 
-    # Check if the request was successful
-    if response.status_code == 200:
-        print("Message sent successfully!")
-    else:
-        print(f"Failed to send message. Error: {response.text}")
  
 ###############################################################################    
