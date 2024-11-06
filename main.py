@@ -68,9 +68,9 @@ def handle_generic_exception(page_url ,e):
 ###############################################################################   
 def main():
     
-    url_list = [ "https://SOME_WEB_SITE.ai.ai/" ,
-                 "https://SOME_WEB_SITE.ai.ai/" ,
-                "https://SOME_WEB_SITE.ai.ai/"]
+    url_list = [ "https://CLIENT_URL.ai.ai/" ,
+                 "https://CLIENT_URL.ai.ai/" ,
+                "https://CLIENT_URL.ai.ai/"]
    
     sites_reg_check(url_list) 
 
