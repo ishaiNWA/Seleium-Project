@@ -62,7 +62,7 @@ def extract_language_urls(driver):
     # Find all language option elements
     lang_raw_items = lang_menu_list.find_elements(By.TAG_NAME, "li") 
     
-    lang_map ={'en': "https://immediatfolex.ai/"} # Add default language (English) to the map
+    lang_map ={'en': "https://SOME_WEB_SITE.ai.ai/"} # Add default language (English) to the map
     
     for item in lang_raw_items:      
         #parse the language code

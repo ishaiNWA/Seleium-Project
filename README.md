@@ -1,7 +1,7 @@
 # WebLinkChecker
 
 This is a tool for checking registration operations on websites,
-matching the format of: \`https://immediatfolex.ai/\`.
+matching the format of: \`https://SOME_WEB_SITE.ai/\`.
 
 ## Description
 
